@@ -16,7 +16,7 @@
         <a th:href="@{/add}" class="btn btn-outline-primary">Создать вакансию</a>
     </nav>
     <div class="text-secondary">
-        <i th:if="${not (title.isEmpty())}" th:utext="'Результаты по запросу ' + ${title} + ':'"></i>
+        <i th:if="${not (title.isEmpty())}" th:text="'Результаты по запросу ' + ${title} + ':'"></i>
     </div>
     <th:block th:each="vacancy : ${vacancies}">
         <br/>
