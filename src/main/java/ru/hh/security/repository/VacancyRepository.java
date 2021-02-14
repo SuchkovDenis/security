@@ -20,4 +20,13 @@ public class VacancyRepository {
         .setParameter(1, '%' + title.toLowerCase() + '%')
         .getResultList();
   }
+
+  public void create(Vacancy vacancy) {
+    entityManager.persist(vacancy);
+  }
+
+  public void deleteById(Integer id) {
+    var vacancy = entityManager.find(Vacancy.class, id);
+    entityManager.remove(vacancy);
+  }
 }

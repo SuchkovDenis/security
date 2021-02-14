@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Вакансии</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-light bg-light mt-3 d-flex justify-content-between">
+        <h3 class="text-dark">
+            Создание вакансии
+        </h3>
+        <a th:href="@{/}" class="btn btn-outline-primary">На главную</a>
+    </nav>
+    <form action="#" th:action="@{/add}" th:object="${vacancy}" method="post">
+        <div class="form-group">
+            <label for="title">Название</label>
+            <input required type="text" class="form-control" id="title" placeholder="Название вакансии" th:field="*{title}">
+        </div>
+        <div class="form-group">
+            <label for="description">Описание</label>
+            <textarea required class="form-control" id="description" placeholder="Описание вкансии"  th:field="*{description}" rows="5">
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Опубликовать</button>
+        <button type="reset" class="btn btn-outline-secondary">Сбросить</button>
+    </form>
+</div>
+</body>
+</html>
