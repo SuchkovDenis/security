@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import ru.hh.security.model.Vacancy;
 import ru.hh.security.repository.VacancyRepository;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class VacancyResource {
   }
 
   @GetMapping
-  public List getVacanciesBy(@RequestParam(required = false) String title) {
+  public List<Vacancy> getVacanciesBy(@RequestParam(required = false) String title) {
     title = title == null ? "" : title;
     return vacancyRepository.getVacanciesByTitle(title);
   }
