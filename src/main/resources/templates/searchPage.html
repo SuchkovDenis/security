@@ -23,12 +23,12 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title" th:utext="${vacancy.title}"></h3>
+                    <h3 class="card-title" th:text="${vacancy.title}"></h3>
                     <form th:action="@{/delete/{id}(id=${vacancy.id})}" method="post">
                         <button class="btn btn-outline-secondary btn-sm" type="submit">x</button>
                     </form>
                 </div>
-                <p class="card-text" th:utext="${vacancy.description}"></p>
+                <p class="card-text" th:text="${vacancy.description}"></p>
             </div>
         </div>
     </th:block>
