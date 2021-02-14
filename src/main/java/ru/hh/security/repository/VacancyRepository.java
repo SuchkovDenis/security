@@ -15,6 +15,8 @@ public class VacancyRepository {
   }
 
   public List getVacanciesByTitle(String title) {
-    return entityManager.createNativeQuery("SELECT * FROM vacancies WHERE title ILIKE '%" + title + "%'").getResultList();
+    return entityManager.createNativeQuery("SELECT * FROM vacancies WHERE title ILIKE CONCAT('%', ?1, '%')")
+        .setParameter(1, title)
+        .getResultList();
   }
 }
